@@ -1,0 +1,13 @@
+
+clsss TEST {
+	
+	public TEST() {
+
+
+	}
+
+	public void testMethod(){
+	
+	}
+
+}
