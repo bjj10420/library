@@ -50,6 +50,47 @@
 
 
 
+						/** 텍스트뷰를 이용해 비트맵을 만든다
+						**/
+						public static Bitmap createMarkerDrawableFromTextView(View view, int width, int height) {
+							return createMarkerDrawableFromTextView(view, width, height, Bitmap.Config.RGB_565);
+						}
+					
+						public static Bitmap createMarkerDrawableFromTextView(final View view, int width, int height,
+								Bitmap.Config bitmapConfig) {
+							Bitmap bitmap = null;
+					
+							try {
+								if (view == null) {
+									return null;
+								}
+					
+								view.layout(0, 0, width, height);
+								view.buildDrawingCache();
+					
+								// 비트맵을 만들고
+								bitmap = Bitmap.createBitmap(width, height, bitmapConfig);
+					
+								// 캔버스에 뷰를 그린다
+								Canvas canvas = new Canvas(bitmap);
+								canvas.drawColor(Color.TRANSPARENT);
+								view.draw(canvas);
+					 
+					
+							} catch (Exception e) {
+								CommonUtils.printDebugStackTrace(e);
+							}
+					
+							return bitmap;
+						}
 
-		
+
+
+
+
+
+
+
+
+
 					}

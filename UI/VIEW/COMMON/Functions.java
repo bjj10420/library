@@ -128,5 +128,33 @@
 							return view;		
 							
 						}
-		
+
+
+
+
+
+
+
+
+
+
+						/**
+						 * 뷰맵안에 있는 모든 뷰에 클릭 이벤트를 설정하고 태그를 걸어둔다
+						 *
+						 * @LastModifyDate : 2017. 1. 19.
+						 * @LastModifier : JJBAE
+						 * @LastVersion : 1.0 2017. 1. 19. JJBAE
+						 * @param viewMap
+						 * @param clickListener
+						 */
+						public void setViewMapClickEventWithTag(Map<String, View> viewMap, OnClickListener clickListener) {
+							CommonUtils.printDebugLog("GuideManager setViewMapClickEventWithTag");
+					
+							for (String key : viewMap.keySet()) {
+					
+								viewMap.get(key).setOnClickListener(clickListener);
+								viewMap.get(key).setTag(key);
+					
+							}
+						}
 					}
