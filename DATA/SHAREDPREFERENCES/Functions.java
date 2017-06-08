@@ -99,6 +99,16 @@
 
 
 
-
+						/**
+						 * 해당되는 키값 내부변수를 체크
+						 * @param serviceId
+						 */
+						private boolean checkSP(int key) {
+							
+							boolean isContain = mPref.contains(key);
+							
+							return isContain;
+							
+						}
 		
 					}

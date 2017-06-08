@@ -345,4 +345,32 @@
 								CommonUtils.printDebugStackTrace(e);
 							}
 						}
+
+
+
+
+
+
+
+
+
+
+
+						// 앱 설치 유무 확인
+						private boolean isAppInstalled(String packageName) {
+							
+						PackageManager pm = getPackageManager();
+						
+						try {
+							
+						pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+						
+						return true;
+						
+						} catch (NameNotFoundException e) {
+							
+						return false;
+						
+						}
+						}
 					}
