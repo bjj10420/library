@@ -281,5 +281,17 @@
 								contentView.setLayoutParams(param);
 
 							}
-						}						
+						}	
+
+						 /**
+					     * 두 뷰의 충돌 판정을 체크
+					     * @param v1
+					     * @param v2
+					     * @return
+					     */
+					    public static boolean checkCollision(View v1, View v2) {
+					        Rect R1=new Rect(v1.getLeft(), v1.getTop(), v1.getRight(), v1.getBottom());
+					        Rect R2=new Rect((int)v2.getTranslationX(), (int)v2.getTranslationY(), (int)v2.getTranslationX() + v2.getWidth(), (int)v2.getTranslationY() + v2.getHeight());
+					        return R1.intersect(R2);
+					    }					
 					}
